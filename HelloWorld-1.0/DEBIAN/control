@@ -1,0 +1,10 @@
+Package: HelloWorld
+Version: 1.0
+Architecture: all
+Maintainer: Priit Parmakson <priit.parmakson@gmail.com>
+Depends: 
+Installed-Size: 1
+Homepage: http://example.com
+Description: "Hello, World!" Bash skript
+ "Hello, World!" Bash skript Debian pakendamise õppimiseks.
+ 
