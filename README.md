@@ -14,7 +14,7 @@ Repos on kokkuvõtlikku teavet Debian tarkvaralevitussüsteemi kohta ja lihtne n
 
 ## Debian pakk (ülevaade)
 
-Tehniliselt on Debian pakk Unix `ar` arhiiv, milles omaorda on kaks `tar` arhiivi. Ühes neist `tar` arhiividest on ohjeteave, teises on paigaldatavad andmed. Lisaks on pakis pakiformaadi versiooni näitav fail:
+Tehniliselt on Debian pakk Unix `ar` arhiiv, milles omakorda on kaks `tar` arhiivi. Ühes neist `tar` arhiividest on ohjeteave, teises on paigaldatavad andmed. Lisaks on pakis pakiformaadi versiooni näitav fail:
 
 - `debian-binary` - üherealine fail pakiformaadi versiooninumbriga
 - `control.tar` - ohjearhiiv, sisaldab paki metateavet ja haldusskripte
@@ -29,23 +29,23 @@ Ohjearhiivis on failid:
 - `config` - valikuline skript, millega saab paigaldamist täiendavalt seadistada
 - `shlibs` - ühiste teekide sõltuvuste nimekiri.
 
-Pakk võib olla lähtekoodipakk (_source package_, `.dsc`)  või täidetava koodi pakk (_binary package_, `.deb`). Lähtekoodipakis on kood koos juhistega sellest täidetava tehise ehitamiseks. Täidetava koodi pakis on valmisehitatud täidetav(ad) tehis(ed) - see (need) tuleb ainult paigaldada.
+Pakk võib olla lähtekoodipakk (_source package_, `.dsc`)  või täidetava koodi pakk (_binary package_, `.deb`). Lähtekoodipakis on kood koos juhistega täidetava tehise ehitamiseks. Täidetava koodi pakis on valmisehitatud täidetav(ad) tehis(ed) - see (need) tuleb ainult masinasse paigaldada.
 
 ## Teave Debiani pakisüsteemi kohta
 
-Debian pakisüsteemi kohta on mitu põhjalikku juhendit:
+Debian pakisüsteemi kohta on mitmeid põhjalikke juhendit:
 
 - [Debian New Maintainers' Guide](https://www.debian.org/doc/manuals/maint-guide/index.en.html)
 - [Ubuntu and Debian Package Management Essentials](https://www.digitalocean.com/community/tutorials/ubuntu-and-debian-package-management-essentials)
-- [Debian Policy Manual](https://www.debian.org/doc/debian-policy/index.html) - Debiani tarkvaralevitussüsteemi omadused, reeglid ja nõuded Debian pakkidele
+- [Debian Policy Manual](https://www.debian.org/doc/debian-policy/index.html) - Debiani tarkvaralevitussüsteemi omadused, reeglid ja nõuded Debian pakkidele.
 
-Neist oma kasutusjuhu jaoks vajaliku ülesleidmine võib olla keeruline. Mõned praktilisemad juhised on:
+Neist oma kasutusjuhu jaoks vajaliku ülesleidmine siiski võib olla keeruline. Mõned praktilisemad juhised on:
 
 - [What is the simplest Debian Packaging Guide?](
 https://askubuntu.com/questions/1345/what-is-the-simplest-debian-packaging-guide) 
 
 
-Konkreetse paki ehitamisel on võib-olla kõige kasulikumad:
+Konkreetse paki ehitamisel on vahenditest võib-olla kõige kasulikumad:
 
 `dpkg-deb`
 - "packs, unpacks and provides information about Debian archives" - 
@@ -96,7 +96,7 @@ Description: "Hello, World!" Bash skript
  "Hello, World!" Bash skript Debian pakendamise õppimiseks.
 ````
 
-Vajadusel saab samass kausta luua ka failid `changelog`, `rules` jt.
+Vajadusel saab samass kausta luua ka ohjefailid `changelog`, `rules` jt.
 
 4  Seadsin omaniku ja õigused:
 
@@ -122,7 +122,7 @@ Annab teate: `dpkg-deb: building package 'helloworld' in 'HelloWorld-1.0.deb'`
 
 Märkus. `dpkg --install` on nn madalataseme paigaldusmeetod. Sellega ei paigaldata autommaatselt sõltuvusi. Kõrgema taseme meetodid (millega paigaldatakse ka sõltuvused) on:
 
-- `sudo apt-get install -f` (lipp `-f` käsib üritada parandada katkist paigaldust) ja
+- `sudo apt-get install -f` (lipp `-f` käsib vajadusel üritada parandada katkist paigaldust) ja
 - `sudo apt install`. Vt: https://unix.stackexchange.com/questions/159094/how-to-install-a-deb-file-by-dpkg-i-or-by-apt.
 
 8  Igaks juhuks vaatasin, et paigaldatud pakkide "andmebaas" (dpkg andmebaas) on olemas ja paki paigaldamisega on seal toimunud muutusi (kuupäevade järgi otsustades):
