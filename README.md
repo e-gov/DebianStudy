@@ -1,0 +1,2 @@
+# DebianStudy
+Debian pakisüsteemi eneseõpe
